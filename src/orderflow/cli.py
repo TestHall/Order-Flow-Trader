@@ -29,7 +29,8 @@ from orderflow.verifier.invariants import InvariantMonitor
 from orderflow.verifier.timing import verify_snapshots
 
 DISCLAIMER = ("Synthetische Sitzungen aus orderflow.replay.synthetic.random_session. Keine echten Marktdaten; "
-              "PnL-Zahlen sind technische Kontrollgrößen ohne jede Aussage über Marktleistung (Kap. 1, 16.3).")
+              "PnL-Zahlen sind technische Kontrollgrößen ohne jede Aussage über Marktleistung (Kap. 1, 16.3). "
+              "Synthetische Quotes ändern sich nur bei Trades; Latenzstress verschiebt daher kaum Fill-Preise.")
 
 
 def _seeds(spec: str) -> list[int]:

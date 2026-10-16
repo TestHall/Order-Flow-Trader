@@ -6,6 +6,7 @@ jeder Prüfung geschrieben.
 from __future__ import annotations
 
 import json
+from datetime import date
 from decimal import Decimal
 from fractions import Fraction
 from pathlib import Path
@@ -24,6 +25,8 @@ def _jsonable(v: Any) -> Any:
         return {"fraction": f"{v.numerator}/{v.denominator}", "float": float(v)}
     if isinstance(v, Decimal):
         return {"decimal": str(v)}
+    if isinstance(v, date):
+        return v.isoformat()
     if isinstance(v, (list, tuple)):
         return [_jsonable(x) for x in v]
     if isinstance(v, dict):

@@ -44,6 +44,7 @@ class SyntheticSession:
     explicit_quotes: list[tuple[int, int, int, int, int]] = field(default_factory=list)
     statuses: list[tuple[int, str, str | None]] = field(default_factory=list)
     heartbeat_off: list[tuple[int, int]] = field(default_factory=list)
+    dense_quotes: list[tuple[int, int, int]] = field(default_factory=list)
     dropped: list[tuple[str, int, int]] = field(default_factory=list)
     duplicates: list[tuple[str, int]] = field(default_factory=list)
     receive_overrides: dict[tuple[str, int], int] = field(default_factory=dict)
@@ -81,6 +82,10 @@ class SyntheticSession:
 
     def no_heartbeat(self, start: int, end: int) -> None:
         self.heartbeat_off.append((start, end))
+
+    def dense(self, start: int, end: int, interval_ms: int = 100) -> None:
+        """Zusätzliche Wiederholungs-Quotes im Abstand interval_ms (realistischere Quote-Dichte)."""
+        self.dense_quotes.append((start, end, interval_ms))
 
     def drop(self, stream: str, start: int, end: int) -> None:
         """Entfernt Ereignisse eines Streams nach Sequenzvergabe -> Sequenzlücke."""
@@ -144,7 +149,16 @@ class SyntheticSession:
                     _, bid, ask, bs, as_ = changes[i]
                     quotes.append((t, bid, ask, bs, as_))
                 t += step
-        quotes.sort()
+            for a, b, ms in self.dense_quotes:
+                t = a
+                while t < b:
+                    off = any(x <= t < y for x, y in self.heartbeat_off)
+                    i = bisect.bisect_right(change_ts, t) - 1
+                    if not off and i >= 0 and t not in explicit_ts and (t - (lo - MINUTE)) % step:
+                        _, bid, ask, bs, as_ = changes[i]
+                        quotes.append((t, bid, ask, bs, as_))
+                    t += ms * MS
+        quotes = sorted(set(quotes))
 
         raw: list[tuple[str, int, dict]] = []
         for tr in sorted(self.trades, key=lambda x: x.ts):
@@ -229,6 +243,7 @@ def random_session(day: date, policy: Policy, seed: int, prior_high: int = 20000
             sell = rng.randint(50, 130)
             unk = rng.choice([0, 0, 0, 5, 40])
             s.bar(start, [low, (low + high) // 2, high, close], buy, sell, unk)
+            s.dense(start + MINUTE, min(start + 16 * MINUTE, hi))  # dichte Quotes für Entry/Exit
             price = close
             k += 1
             mode = rng.choice(["return", "return", "barrier", "drift"])

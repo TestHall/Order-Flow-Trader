@@ -1,0 +1,3018 @@
+{
+  "report": "Öffentliche Selbsttests T01–T20 und Zustandsinvarianten",
+  "handbook": "KI-Order-Flow-Ausbildung, Version 1.0 (23.09.2026), Kap. 10 und 7.5",
+  "policy_version": "OF-A-1.0",
+  "policy_sha256": "e41a89f63e068f9c9eecfc826e5ee92e1d1cc64f07981c3de5d71d4d7fd36e14",
+  "simulation_version": "SIM-1.0",
+  "simulation_sha256": "0ce8d87e7031141b7c5b0c971bc8cea114e199aca2dd274831604fe6aba1ae72",
+  "statement": "Nur synthetische Daten. Bestandene Tests belegen technische Regelkonformität, keine Marktleistung und keinen handelbaren Vorteil (Kap. 1, 16.3).",
+  "summary": {
+    "handbook_tests_passed": 32,
+    "handbook_tests_failed": 0,
+    "handbook_test_ids": [
+      "INV",
+      "K11",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T09-T12",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T14",
+      "T15",
+      "T16",
+      "T17",
+      "T18",
+      "T19",
+      "T20"
+    ],
+    "other_tests_passed": 36,
+    "other_tests_failed": 0
+  },
+  "tests": [
+    {
+      "test_id": "INV",
+      "title": "Zustandsinvarianten Kap. 7.5 bei jeder Zustandsänderung",
+      "chapter": "7.5",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_invarianten_bei_jeder_zustandsaenderung",
+      "checks": [
+        {
+          "name": "Prüfungen_durchgeführt",
+          "expected": true,
+          "actual": true,
+          "detail": 4821,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "INV",
+      "title": "Harte Gates Kap. 14.1: null erfundene Fills, null Zukunftsverletzungen",
+      "chapter": "14.1",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_keine_erfundenen_fills_und_keine_zukunftsdaten",
+      "checks": [
+        {
+          "name": "Fills_seed_1",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_1",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_2",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_2",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_3",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_3",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_4",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_4",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_5",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_5",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_6",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_6",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_7",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_7",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_8",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_8",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_9",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_9",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_10",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_10",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_11",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_11",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_seed_12",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshots_seed_12",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fills_geprüft",
+          "expected": true,
+          "actual": true,
+          "detail": 12,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "INV",
+      "title": "Abdeckung der Zufallssitzungen",
+      "chapter": "10.4",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_zufallssitzungen_decken_faelle_ab",
+      "checks": [
+        {
+          "name": "Duplikate_verworfen",
+          "expected": true,
+          "actual": true,
+          "detail": 2,
+          "pass": true
+        },
+        {
+          "name": "mindestens_ein_Trade",
+          "expected": true,
+          "actual": true,
+          "detail": 6,
+          "pass": true
+        },
+        {
+          "name": "Fall_WAIT_CONFIRMATION_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fall_CANDIDATE_REJECTED_BARRIER_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fall_CANDIDATE_REJECTED_EXPIRY_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fall_CONFIRMED_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fall_COOLDOWN_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fall_DATA_GAP_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fall_TRADING_HALT_kommt_vor",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "CANDIDATE_REJECTED_BARRIER",
+            "CANDIDATE_REJECTED_EXPIRY",
+            "CONFIRMED",
+            "COOLDOWN",
+            "DATA_GAP",
+            "DONE_FOR_SESSION",
+            "NO_SIGNAL",
+            "NO_TRADE_DATA_QUALITY",
+            "OUTSIDE_SIGNAL_TIME",
+            "POSITION_MANAGED",
+            "TRADING_HALT",
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "K11",
+      "title": "Blinder Lernfall Phase 1–4",
+      "chapter": "11",
+      "nodeid": "tests/synthetic/test_kap11_lernfall.py::test_kap11_zwei_fortsetzungen",
+      "checks": [
+        {
+          "name": "Entscheidungen_bis_Entry_identisch",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "Entry_Fill",
+          "expected": {
+            "decimal": "4999.50"
+          },
+          "actual": {
+            "decimal": "4999.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Fill_vor_Folgeereignissen",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "A_Exit",
+          "expected": [
+            "TARGET",
+            {
+              "decimal": "4995.75"
+            }
+          ],
+          "actual": [
+            "TARGET",
+            {
+              "decimal": "4995.75"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "A_brutto",
+          "expected": {
+            "decimal": "18.75"
+          },
+          "actual": {
+            "decimal": "18.75"
+          },
+          "pass": true
+        },
+        {
+          "name": "A_netto",
+          "expected": {
+            "decimal": "16.25"
+          },
+          "actual": {
+            "decimal": "16.25"
+          },
+          "pass": true
+        },
+        {
+          "name": "A_R",
+          "expected": {
+            "decimal": "10.00"
+          },
+          "actual": {
+            "decimal": "10.00"
+          },
+          "pass": true
+        },
+        {
+          "name": "A_netto_R",
+          "expected": {
+            "decimal": "1.625"
+          },
+          "actual": {
+            "decimal": "1.625"
+          },
+          "pass": true
+        },
+        {
+          "name": "B_Exit",
+          "expected": [
+            "STOP",
+            {
+              "decimal": "5001.75"
+            }
+          ],
+          "actual": [
+            "STOP",
+            {
+              "decimal": "5001.75"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "B_brutto",
+          "expected": {
+            "decimal": "-11.25"
+          },
+          "actual": {
+            "decimal": "-11.25"
+          },
+          "pass": true
+        },
+        {
+          "name": "B_netto",
+          "expected": {
+            "decimal": "-13.75"
+          },
+          "actual": {
+            "decimal": "-13.75"
+          },
+          "pass": true
+        },
+        {
+          "name": "B_netto_R",
+          "expected": {
+            "decimal": "-1.375"
+          },
+          "actual": {
+            "decimal": "-1.375"
+          },
+          "pass": true
+        },
+        {
+          "name": "beide_regelkonform_bewertet",
+          "expected": [
+            "SCORED",
+            "SCORED"
+          ],
+          "actual": [
+            "SCORED",
+            "SCORED"
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "P1",
+      "title": "Identischer Datenstand + deterministische Policy -> identische Aktion",
+      "chapter": "10.4",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_determinismus",
+      "checks": [
+        {
+          "name": "seed_1",
+          "expected": [
+            "77b9cb3c82a155cc66e89135e1875e724d5d03af22d584260119c50389848b12",
+            true
+          ],
+          "actual": [
+            "77b9cb3c82a155cc66e89135e1875e724d5d03af22d584260119c50389848b12",
+            true
+          ],
+          "pass": true
+        },
+        {
+          "name": "seed_2",
+          "expected": [
+            "fbde3f98f7eb9b9116a4f2b17eb1bfee2faf6ac4b19008e1f835edde64c9873c",
+            true
+          ],
+          "actual": [
+            "fbde3f98f7eb9b9116a4f2b17eb1bfee2faf6ac4b19008e1f835edde64c9873c",
+            true
+          ],
+          "pass": true
+        },
+        {
+          "name": "seed_3",
+          "expected": [
+            "210ac00bc20411bf81e5a0cef8185e2c3d7ff4215df1781ebee5f49625c49c15",
+            true
+          ],
+          "actual": [
+            "210ac00bc20411bf81e5a0cef8185e2c3d7ff4215df1781ebee5f49625c49c15",
+            true
+          ],
+          "pass": true
+        },
+        {
+          "name": "seed_4",
+          "expected": [
+            "4792b0029d7e416ef71c2658ee284cadc6395ccd561d6403d4ee156b49f91c3e",
+            true
+          ],
+          "actual": [
+            "4792b0029d7e416ef71c2658ee284cadc6395ccd561d6403d4ee156b49f91c3e",
+            true
+          ],
+          "pass": true
+        },
+        {
+          "name": "seed_5",
+          "expected": [
+            "e4269435260d5b86dff59c66b8dc38d932718890ad3c411dd2561dc17c7270d3",
+            true
+          ],
+          "actual": [
+            "e4269435260d5b86dff59c66b8dc38d932718890ad3c411dd2561dc17c7270d3",
+            true
+          ],
+          "pass": true
+        },
+        {
+          "name": "seed_6",
+          "expected": [
+            "43ef1be01f25a5541df61c20be505d397e972db8a06ab600774b59dc09525aff",
+            true
+          ],
+          "actual": [
+            "43ef1be01f25a5541df61c20be505d397e972db8a06ab600774b59dc09525aff",
+            true
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "P2",
+      "title": "Änderungen nur an zukünftigen Ereignissen ändern frühere Entscheidungen nicht",
+      "chapter": "10.4",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_zukuenftige_ereignisse_aendern_fruehere_entscheidungen_nicht",
+      "checks": [
+        {
+          "name": "seed_1",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "seed_2",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "seed_3",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "seed_4",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "seed_5",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "seed_6",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "P3",
+      "title": "Höhere Kosten bei eingefrorener Fill-Folge -> kein höheres Netto",
+      "chapter": "10.4",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_hoeherer_kostenansatz_bei_eingefrorenen_fills",
+      "checks": [
+        {
+          "name": "netto_nicht_höher",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            {
+              "decimal": "11.25"
+            },
+            {
+              "decimal": "8.75"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "netto_nicht_höher",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            {
+              "decimal": "-10.00"
+            },
+            {
+              "decimal": "-12.50"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "netto_nicht_höher",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            {
+              "decimal": "-3.75"
+            },
+            {
+              "decimal": "-6.25"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "netto_nicht_höher",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            {
+              "decimal": "-18.75"
+            },
+            {
+              "decimal": "-21.25"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "netto_nicht_höher",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            {
+              "decimal": "-3.75"
+            },
+            {
+              "decimal": "-6.25"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "netto_nicht_höher",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            {
+              "decimal": "-10.00"
+            },
+            {
+              "decimal": "-12.50"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "Trades_geprüft",
+          "expected": true,
+          "actual": true,
+          "detail": 6,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "P4",
+      "title": "Erneute Ausführung mit Kostenstress (Kap. 8.3): Auswahl darf sich ändern",
+      "chapter": "10.4/8.3",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_kosten_bei_erneuter_policyausfuehrung",
+      "checks": [
+        {
+          "name": "slip1_lat500_seed1_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip1_lat500_seed2_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip1_lat1000_seed1_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip1_lat1000_seed2_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip2_lat500_seed1_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip2_lat500_seed2_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip2_lat1000_seed1_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "slip2_lat1000_seed2_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "P5",
+      "title": "Geringeres Risikobudget -> keine höhere zulässige Stückzahl",
+      "chapter": "10.4",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_geringeres_budget_nie_hoehere_stueckzahl",
+      "checks": [
+        {
+          "name": "monoton_d1",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            1,
+            4,
+            4,
+            4,
+            8,
+            10,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d2",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            1,
+            3,
+            3,
+            4,
+            6,
+            10,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d3",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            5,
+            10,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d4",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            5,
+            10,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d5",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            2,
+            2,
+            2,
+            4,
+            8,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d6",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            2,
+            2,
+            2,
+            4,
+            8,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d7",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            7,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d8",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            6,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d9",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            3,
+            6,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d10",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            5,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d11",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            5,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d12",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            5,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d13",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d14",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d15",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d16",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            4,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d17",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            3,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d18",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            3,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d19",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            3,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d20",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            3,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d21",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            3,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d22",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            3,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d23",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d24",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d25",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d26",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d27",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d28",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d29",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d30",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d31",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d32",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d33",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d34",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d35",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d36",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d37",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d38",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d39",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            10
+          ],
+          "pass": true
+        },
+        {
+          "name": "monoton_d40",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            10
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "P6",
+      "title": "Gate nicht durch Freitext, Selbsteinschätzung oder Datenfeld-Instruktion aufhebbar",
+      "chapter": "10.4/15",
+      "nodeid": "tests/invariants/test_10_4_eigenschaften.py::test_freitext_hebt_keine_sperre_auf",
+      "checks": [
+        {
+          "name": "Aktionen_unverändert",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "Long_abgewiesen",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "forecast: {'target_definition': 'Ziel vor Stopp', 'probability': 0.9} is not valid under any of the given schemas",
+            "PROPOSE_LONG ist in dieser Policy unzulässig"
+          ],
+          "pass": true
+        },
+        {
+          "name": "erfundene_Wahrscheinlichkeit_abgewiesen",
+          "expected": true,
+          "actual": true,
+          "detail": [
+            "forecast: {'target_definition': 'Ziel vor Stopp', 'probability': 0.9} is not valid under any of the given schemas",
+            "PROPOSE_LONG ist in dieser Policy unzulässig"
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T01",
+      "title": "Delta",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T01_delta",
+      "checks": [
+        {
+          "name": "V",
+          "expected": 230,
+          "actual": 230,
+          "pass": true
+        },
+        {
+          "name": "D",
+          "expected": 50,
+          "actual": 50,
+          "pass": true
+        },
+        {
+          "name": "DR",
+          "expected": {
+            "fraction": "5/23",
+            "float": 0.21739130434782608
+          },
+          "actual": {
+            "fraction": "5/23",
+            "float": 0.21739130434782608
+          },
+          "pass": true
+        },
+        {
+          "name": "DR_float_6",
+          "expected": 0.217391,
+          "actual": 0.217391,
+          "pass": true
+        },
+        {
+          "name": "K",
+          "expected": {
+            "fraction": "1/1",
+            "float": 1.0
+          },
+          "actual": {
+            "fraction": "1/1",
+            "float": 1.0
+          },
+          "pass": true
+        },
+        {
+          "name": "Begriffsprüfung_falsche_Aussage",
+          "expected": [
+            "DELTA_AS_NET_VOLUME"
+          ],
+          "actual": [
+            "DELTA_AS_NET_VOLUME"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Begriffsprüfung_korrekte_Aussage",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T02",
+      "title": "Unbekannte Seite",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T02_unbekannte_seite",
+      "checks": [
+        {
+          "name": "V",
+          "expected": 300,
+          "actual": 300,
+          "pass": true
+        },
+        {
+          "name": "D_bekannter_Anteil",
+          "expected": 50,
+          "actual": 50,
+          "pass": true
+        },
+        {
+          "name": "K",
+          "expected": {
+            "fraction": "23/30",
+            "float": 0.7666666666666667
+          },
+          "actual": {
+            "fraction": "23/30",
+            "float": 0.7666666666666667
+          },
+          "pass": true
+        },
+        {
+          "name": "K_float_6",
+          "expected": 0.766667,
+          "actual": 0.766667,
+          "pass": true
+        },
+        {
+          "name": "DR",
+          "expected": {
+            "fraction": "5/23",
+            "float": 0.21739130434782608
+          },
+          "actual": {
+            "fraction": "5/23",
+            "float": 0.21739130434782608
+          },
+          "pass": true
+        },
+        {
+          "name": "Entscheidung",
+          "expected": [
+            "NO_TRADE_DATA_QUALITY"
+          ],
+          "actual": [
+            "NO_TRADE_DATA_QUALITY"
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T02",
+      "title": "Unbekannte Seite im Regelmodul (Ausbruchsbalken mit U = 70)",
+      "chapter": "10.1/7.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T02_im_regelmodul",
+      "checks": [
+        {
+          "name": "Aktion",
+          "expected": "NO_TRADE",
+          "actual": "NO_TRADE",
+          "pass": true
+        },
+        {
+          "name": "Gründe",
+          "expected": [
+            "NO_TRADE_DATA_QUALITY"
+          ],
+          "actual": [
+            "NO_TRADE_DATA_QUALITY"
+          ],
+          "pass": true
+        },
+        {
+          "name": "K",
+          "expected": 0.7666666666666667,
+          "actual": 0.7666666666666667,
+          "pass": true
+        },
+        {
+          "name": "Zustand",
+          "expected": "IDLE",
+          "actual": "IDLE",
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T03",
+      "title": "Leeres Fenster",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T03_leeres_fenster",
+      "checks": [
+        {
+          "name": "V",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        },
+        {
+          "name": "D",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        },
+        {
+          "name": "DR",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "K",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "Qualitätsflags",
+          "expected": [
+            "ZERO_VOLUME",
+            "NO_CLASSIFIED_VOLUME"
+          ],
+          "actual": [
+            "ZERO_VOLUME",
+            "NO_CLASSIFIED_VOLUME"
+          ],
+          "pass": true
+        },
+        {
+          "name": "kein_Signal",
+          "expected": true,
+          "actual": true,
+          "detail": null,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T04",
+      "title": "Positionsgröße",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T04_positionsgroesse",
+      "checks": [
+        {
+          "name": "Tickwert",
+          "expected": {
+            "decimal": "1.25"
+          },
+          "actual": {
+            "decimal": "1.25"
+          },
+          "pass": true
+        },
+        {
+          "name": "Gebühr",
+          "expected": {
+            "decimal": "2.50"
+          },
+          "actual": {
+            "decimal": "2.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Reserve_Ticks",
+          "expected": 2,
+          "actual": 2,
+          "pass": true
+        },
+        {
+          "name": "Risiko_je_Kontrakt",
+          "expected": {
+            "decimal": "30.00"
+          },
+          "actual": {
+            "decimal": "30.00"
+          },
+          "pass": true
+        },
+        {
+          "name": "rechnerisch",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "nach_Referenzlimit",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "Budget_25_Menge",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        },
+        {
+          "name": "Budget_25_Entscheidung",
+          "expected": "NO_TRADE_RISK",
+          "actual": "NO_TRADE_RISK",
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T05",
+      "title": "Nettoergebnis",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T05_nettoergebnis",
+      "checks": [
+        {
+          "name": "Ticks",
+          "expected": 8,
+          "actual": 8,
+          "pass": true
+        },
+        {
+          "name": "brutto_USD",
+          "expected": {
+            "decimal": "10.00"
+          },
+          "actual": {
+            "decimal": "10.00"
+          },
+          "pass": true
+        },
+        {
+          "name": "netto_USD",
+          "expected": {
+            "decimal": "7.50"
+          },
+          "actual": {
+            "decimal": "7.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "abgezogene_Kosten_nur_Gebühr",
+          "expected": {
+            "decimal": "2.50"
+          },
+          "actual": {
+            "decimal": "2.50"
+          },
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T06",
+      "title": "Kosten machen den Vorteil negativ",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T06_kosten_machen_vorteil_negativ",
+      "checks": [
+        {
+          "name": "Erwartungswert_R",
+          "expected": {
+            "fraction": "-1/20",
+            "float": -0.05
+          },
+          "actual": {
+            "fraction": "-1/20",
+            "float": -0.05
+          },
+          "pass": true
+        },
+        {
+          "name": "negativ",
+          "expected": true,
+          "actual": true,
+          "detail": {
+            "fraction": "-1/20",
+            "float": -0.05
+          },
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T07",
+      "title": "Annulliertes Angebot",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T07_annulliertes_angebot",
+      "checks": [
+        {
+          "name": "beobachtbar",
+          "expected": "BID_MODIFIED_OR_CANCELLED",
+          "actual": "BID_MODIFIED_OR_CANCELLED",
+          "pass": true
+        },
+        {
+          "name": "aggressiver_Verkauf_bewiesen",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "name": "Manipulationsabsicht_bewiesen",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "name": "Identität_bewiesen",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "name": "Begriffsprüfung",
+          "expected": [
+            "IDENTITY_CLAIM",
+            "MANIPULATION_CLAIM"
+          ],
+          "actual": [
+            "IDENTITY_CLAIM",
+            "MANIPULATION_CLAIM"
+          ],
+          "pass": true
+        },
+        {
+          "name": "zulässige_Abgrenzung",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T08",
+      "title": "Limit berührt (FIFO-Testmodell)",
+      "chapter": "10.1",
+      "nodeid": "tests/synthetic/test_10_1_rechnen_und_marktmechanik.py::test_T08_limit_beruehrt",
+      "checks": [
+        {
+          "name": "eigener_Fill",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        },
+        {
+          "name": "Restqueue_davor",
+          "expected": 90,
+          "actual": 90,
+          "pass": true
+        },
+        {
+          "name": "Modell",
+          "expected": "FIFO_TEST_MODEL",
+          "actual": "FIFO_TEST_MODEL",
+          "pass": true
+        },
+        {
+          "name": "keine_allgemeine_Börsenregel",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T09",
+      "title": "Kandidat allein",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T09_kandidat_allein",
+      "checks": [
+        {
+          "name": "Ausbruchsschluss",
+          "expected": {
+            "decimal": "5000.50"
+          },
+          "actual": {
+            "decimal": "5000.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Volumen_B_S_U",
+          "expected": [
+            140,
+            90,
+            0
+          ],
+          "actual": [
+            140,
+            90,
+            0
+          ],
+          "pass": true
+        },
+        {
+          "name": "Zustand",
+          "expected": "ARMED",
+          "actual": "ARMED",
+          "pass": true
+        },
+        {
+          "name": "Aktion",
+          "expected": "NO_TRADE",
+          "actual": "NO_TRADE",
+          "pass": true
+        },
+        {
+          "name": "Gründe",
+          "expected": [
+            "WAIT_CONFIRMATION"
+          ],
+          "actual": [
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "H_eingefroren",
+          "expected": 20004,
+          "actual": 20004,
+          "pass": true
+        },
+        {
+          "name": "L_eingefroren",
+          "expected": 19999,
+          "actual": 19999,
+          "pass": true
+        },
+        {
+          "name": "Order_existiert",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T09-T12",
+      "title": "Gemeinsame Annahmen Kap. 10.2",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_gemeinsame_annahmen",
+      "checks": [
+        {
+          "name": "P",
+          "expected": 20000,
+          "actual": 20000,
+          "pass": true
+        },
+        {
+          "name": "H",
+          "expected": 20004,
+          "actual": 20004,
+          "pass": true
+        },
+        {
+          "name": "L",
+          "expected": 19999,
+          "actual": 19999,
+          "pass": true
+        },
+        {
+          "name": "Bestätigungsgrenze_min(P-1,L-1)",
+          "expected": 19998,
+          "actual": 19998,
+          "pass": true
+        },
+        {
+          "name": "Bestätigungsgrenze_Preis",
+          "expected": {
+            "decimal": "4999.50"
+          },
+          "actual": {
+            "decimal": "4999.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Stopp_H+2",
+          "expected": 20006,
+          "actual": 20006,
+          "pass": true
+        },
+        {
+          "name": "Stopp_Preis",
+          "expected": {
+            "decimal": "5001.50"
+          },
+          "actual": {
+            "decimal": "5001.50"
+          },
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T10",
+      "title": "Bestätigung",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T10_bestaetigung",
+      "checks": [
+        {
+          "name": "vorgeschlagener_Short",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "Seite",
+          "expected": "SELL",
+          "actual": "SELL",
+          "pass": true
+        },
+        {
+          "name": "Stopp",
+          "expected": {
+            "decimal": "5001.50"
+          },
+          "actual": {
+            "decimal": "5001.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "geplanter_Fill",
+          "expected": {
+            "decimal": "4999.50"
+          },
+          "actual": {
+            "decimal": "4999.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Abstand_Ticks",
+          "expected": 8,
+          "actual": 8,
+          "pass": true
+        },
+        {
+          "name": "Ziel",
+          "expected": {
+            "decimal": "4995.50"
+          },
+          "actual": {
+            "decimal": "4995.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Beispielrisiko_USD",
+          "expected": {
+            "decimal": "15.00"
+          },
+          "actual": {
+            "decimal": "15.00"
+          },
+          "pass": true
+        },
+        {
+          "name": "Bid_Fill_nach_Verzögerung",
+          "expected": [
+            {
+              "decimal": "4999.50"
+            }
+          ],
+          "actual": [
+            {
+              "decimal": "4999.50"
+            }
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fillzeit",
+          "expected": "2026-09-22T14:17:00.350Z",
+          "actual": "2026-09-22T14:17:00.350Z",
+          "pass": true
+        },
+        {
+          "name": "Order_erst_nach_Prüfungen",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "Position_Ziel",
+          "expected": {
+            "decimal": "4995.50"
+          },
+          "actual": {
+            "decimal": "4995.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Zustand",
+          "expected": "OPEN",
+          "actual": "OPEN",
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T11",
+      "title": "Widerlegung zuerst",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T11_widerlegung_zuerst",
+      "checks": [
+        {
+          "name": "Verwerfungsgrund",
+          "expected": [
+            [
+              "CANDIDATE_REJECTED_BARRIER"
+            ]
+          ],
+          "actual": [
+            [
+              "CANDIDATE_REJECTED_BARRIER"
+            ]
+          ],
+          "pass": true
+        },
+        {
+          "name": "kein_Short",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "keine_Order",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        },
+        {
+          "name": "Schlusskurs_löscht_Widerlegung_nicht",
+          "expected": [
+            "COOLDOWN"
+          ],
+          "actual": [
+            "COOLDOWN"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Wartezeit_vollständige_Balken",
+          "expected": [
+            "14:18:00",
+            "14:19:00",
+            "14:20:00",
+            "14:21:00",
+            "14:22:00"
+          ],
+          "actual": [
+            "14:18:00",
+            "14:19:00",
+            "14:20:00",
+            "14:21:00",
+            "14:22:00"
+          ],
+          "pass": true
+        },
+        {
+          "name": "frühestens_danach_neue_Suche",
+          "expected": [
+            "IDLE",
+            [
+              "NO_SIGNAL"
+            ]
+          ],
+          "actual": [
+            "IDLE",
+            [
+              "NO_SIGNAL"
+            ]
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T12",
+      "title": "Fristablauf",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T12_fristablauf",
+      "checks": [
+        {
+          "name": "Balken1",
+          "expected": [
+            "WAIT_CONFIRMATION"
+          ],
+          "actual": [
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Balken2",
+          "expected": [
+            "WAIT_CONFIRMATION"
+          ],
+          "actual": [
+            "WAIT_CONFIRMATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Verwerfung_nach_Balken3",
+          "expected": [
+            "CANDIDATE_REJECTED_EXPIRY"
+          ],
+          "actual": [
+            "CANDIDATE_REJECTED_EXPIRY"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Balken4_gehört_nicht_zum_Kandidaten",
+          "expected": [
+            "COOLDOWN"
+          ],
+          "actual": [
+            "COOLDOWN"
+          ],
+          "pass": true
+        },
+        {
+          "name": "kein_Short",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T13",
+      "title": "Veraltete Quote",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T13_veraltete_quote",
+      "checks": [
+        {
+          "name": "Quotealter_am_ersten_Eintritt_ms",
+          "expected": 400,
+          "actual": 400,
+          "pass": true
+        },
+        {
+          "name": "kein_Fill_um_14:17:00.350",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Fill_mit_späterer_gültiger_Quote",
+          "expected": [
+            "2026-09-22T14:17:01.270Z"
+          ],
+          "actual": [
+            "2026-09-22T14:17:01.270Z"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Fill_innerhalb_Signalgültigkeit",
+          "expected": true,
+          "actual": true,
+          "detail": null,
+          "pass": true
+        },
+        {
+          "name": "Quotealter_beim_Fill_us",
+          "expected": 250000,
+          "actual": 250000,
+          "pass": true
+        },
+        {
+          "name": "Orderstatus",
+          "expected": [
+            "WORKING"
+          ],
+          "actual": [
+            "WORKING"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Variante_b_Fills",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Variante_b_Entscheidung",
+          "expected": [
+            "NO_TRADE_EXPIRED"
+          ],
+          "actual": [
+            "NO_TRADE_EXPIRED"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Variante_b_Ablaufgründe",
+          "expected": [
+            "SIGNAL_EXPIRED",
+            "QUOTE_STALE"
+          ],
+          "actual": [
+            "SIGNAL_EXPIRED",
+            "QUOTE_STALE"
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T14",
+      "title": "Zu späte KI-Antwort",
+      "chapter": "10.2",
+      "nodeid": "tests/synthetic/test_10_2_strategiegrenzen.py::test_T14_zu_spaete_ki_antwort",
+      "checks": [
+        {
+          "name": "Antwort_nach_3s",
+          "expected": [
+            "2026-09-22T14:17:03.100Z"
+          ],
+          "actual": [
+            "2026-09-22T14:17:03.100Z"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Entscheidung",
+          "expected": [
+            [
+              "NO_TRADE_EXPIRED"
+            ]
+          ],
+          "actual": [
+            [
+              "NO_TRADE_EXPIRED"
+            ]
+          ],
+          "pass": true
+        },
+        {
+          "name": "kein_Vorschlag",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "kein_rückwirkender_Fill",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "keine_Order",
+          "expected": 0,
+          "actual": 0,
+          "pass": true
+        },
+        {
+          "name": "Gegenprobe_rechtzeitig_gültig_bis",
+          "expected": "2026-09-22T14:17:02.100Z",
+          "actual": "2026-09-22T14:17:02.100Z",
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T15",
+      "title": "Replay-Zukunft",
+      "chapter": "10.3",
+      "nodeid": "tests/synthetic/test_10_3_daten_und_betrieb.py::test_T15_replay_zukunft",
+      "checks": [
+        {
+          "name": "Vergleichsmenge_nicht_leer",
+          "expected": true,
+          "actual": true,
+          "detail": 47,
+          "pass": true
+        },
+        {
+          "name": "früherer_Output_identisch",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "Ausbruchsbalken_ohne_späte_Zeile_B_S",
+          "expected": [
+            140,
+            90
+          ],
+          "actual": [
+            140,
+            90
+          ],
+          "pass": true
+        },
+        {
+          "name": "späte_Zeile_als_LATE_EVENT",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "Entscheidung_vor_Kenntnis_PROPOSE_SHORT_in_beiden",
+          "expected": [
+            "PROPOSE_SHORT"
+          ],
+          "actual": [
+            "PROPOSE_SHORT"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Snapshot_Zeitprüfung_A",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Snapshot_Zeitprüfung_B",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T16",
+      "title": "Doppelte Order",
+      "chapter": "10.3",
+      "nodeid": "tests/synthetic/test_10_3_daten_und_betrieb.py::test_T16_doppelte_order",
+      "checks": [
+        {
+          "name": "eine_logische_Order",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "zweiter_Aufruf_liefert_bestehenden_Status",
+          "expected": [
+            true,
+            false,
+            "NEW"
+          ],
+          "actual": [
+            true,
+            false,
+            "NEW"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Journal_ORDER_Einträge",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "Menge_über_Genehmigung_abgewiesen",
+          "expected": [
+            "REJECTED",
+            [
+              "QUANTITY_ABOVE_APPROVED"
+            ]
+          ],
+          "actual": [
+            "REJECTED",
+            [
+              "QUANTITY_ABOVE_APPROVED"
+            ]
+          ],
+          "pass": true
+        },
+        {
+          "name": "Retry_mit_gleicher_ID_keine_zweite_Order",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "maximal_genehmigte_Menge_gefüllt",
+          "expected": [
+            1
+          ],
+          "actual": [
+            1
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T17",
+      "title": "Neustart bei Position",
+      "chapter": "10.3",
+      "nodeid": "tests/synthetic/test_10_3_daten_und_betrieb.py::test_T17_neustart_bei_position",
+      "checks": [
+        {
+          "name": "vor_Absturz_offen",
+          "expected": [
+            "OPEN",
+            -1
+          ],
+          "actual": [
+            "OPEN",
+            -1
+          ],
+          "pass": true
+        },
+        {
+          "name": "Position_rekonstruiert",
+          "expected": [
+            "OPEN",
+            -1,
+            1
+          ],
+          "actual": [
+            "OPEN",
+            -1,
+            1
+          ],
+          "pass": true
+        },
+        {
+          "name": "Schutzstatus_Stopp",
+          "expected": {
+            "decimal": "5001.50"
+          },
+          "actual": {
+            "decimal": "5001.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Schutzstatus_Ziel",
+          "expected": {
+            "decimal": "4995.50"
+          },
+          "actual": {
+            "decimal": "4995.50"
+          },
+          "pass": true
+        },
+        {
+          "name": "Zeitausstieg",
+          "expected": "2026-09-22T14:27:00.350Z",
+          "actual": "2026-09-22T14:27:00.350Z",
+          "pass": true
+        },
+        {
+          "name": "keine_zweite_Entry_Order",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "nicht_auf_flat_zurückgesetzt_vor_Exit",
+          "expected": [],
+          "actual": [],
+          "pass": true
+        },
+        {
+          "name": "Exit_durch_Zeitausstieg",
+          "expected": [
+            [
+              "TIME",
+              "2026-09-22T14:27:00.600Z"
+            ]
+          ],
+          "actual": [
+            [
+              "TIME",
+              "2026-09-22T14:27:00.600Z"
+            ]
+          ],
+          "pass": true
+        },
+        {
+          "name": "Endzustand",
+          "expected": "DONE_FOR_SESSION",
+          "actual": "DONE_FOR_SESSION",
+          "pass": true
+        },
+        {
+          "name": "Invarianten_nach_Neustart_geprüft",
+          "expected": true,
+          "actual": true,
+          "detail": 348,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T18",
+      "title": "Datenlücke bei offenem Trade",
+      "chapter": "10.3",
+      "nodeid": "tests/synthetic/test_10_3_daten_und_betrieb.py::test_T18_datenluecke_bei_offenem_trade",
+      "checks": [
+        {
+          "name": "Lücke_erkannt",
+          "expected": [
+            "GAP"
+          ],
+          "actual": [
+            "GAP"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Trade_im_Bericht",
+          "expected": 1,
+          "actual": 1,
+          "pass": true
+        },
+        {
+          "name": "Ergebnis",
+          "expected": "UNSCORABLE",
+          "actual": "UNSCORABLE",
+          "pass": true
+        },
+        {
+          "name": "Grund",
+          "expected": [
+            "DATA_GAP"
+          ],
+          "actual": [
+            "DATA_GAP"
+          ],
+          "pass": true
+        },
+        {
+          "name": "nicht_als_Gewinn_gewertet",
+          "expected": "0",
+          "actual": "0",
+          "pass": true
+        },
+        {
+          "name": "Schutz_blieb_aktiv_Exit_nach_Regeln",
+          "expected": "TARGET",
+          "actual": "TARGET",
+          "pass": true
+        },
+        {
+          "name": "neue_Einstiege_gesperrt",
+          "expected": [
+            [
+              "DATA_GAP"
+            ]
+          ],
+          "actual": [
+            [
+              "DATA_GAP"
+            ]
+          ],
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T19",
+      "title": "Session und Sommerzeit",
+      "chapter": "10.3",
+      "nodeid": "tests/synthetic/test_10_3_daten_und_betrieb.py::test_T19_session_und_sommerzeit",
+      "checks": [
+        {
+          "name": "Start_06.03_UTC",
+          "expected": "2026-03-06T14:30:00.000Z",
+          "actual": "2026-03-06T14:30:00.000Z",
+          "pass": true
+        },
+        {
+          "name": "Start_09.03_UTC",
+          "expected": "2026-03-09T13:30:00.000Z",
+          "actual": "2026-03-09T13:30:00.000Z",
+          "pass": true
+        },
+        {
+          "name": "gleiche_lokale_Startzeit_versch_Offset",
+          "expected": 3600000000,
+          "actual": 3600000000,
+          "pass": true
+        },
+        {
+          "name": "13:45Z_am_09.03_in_Sitzung",
+          "expected": "2026-03-09",
+          "actual": "2026-03-09",
+          "pass": true
+        },
+        {
+          "name": "13:45Z_am_06.03_vor_Sitzung",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "Feiertag_kein_Handelstag",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "name": "verkürzte_Sitzung_Ende",
+          "expected": "2026-03-12T17:00:00.000Z",
+          "actual": "2026-03-12T17:00:00.000Z",
+          "pass": true
+        },
+        {
+          "name": "nicht_abgedeckter_Tag_nicht_prüfbar",
+          "expected": true,
+          "actual": true,
+          "detail": null,
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "test_id": "T20",
+      "title": "Verbotene Übernahme",
+      "chapter": "10.3",
+      "nodeid": "tests/synthetic/test_10_3_daten_und_betrieb.py::test_T20_verbotene_uebernahme",
+      "checks": [
+        {
+          "name": "kein_unabhängiger_Nachweis",
+          "expected": false,
+          "actual": false,
+          "pass": true
+        },
+        {
+          "name": "Befund",
+          "expected": "INCONCLUSIVE",
+          "actual": "INCONCLUSIVE",
+          "pass": true
+        },
+        {
+          "name": "Zeitraum_als_Validierung_verbraucht",
+          "expected": [
+            "VALIDATION",
+            "CONSUMED_AS_VALIDATION"
+          ],
+          "actual": [
+            "VALIDATION",
+            "CONSUMED_AS_VALIDATION"
+          ],
+          "pass": true
+        },
+        {
+          "name": "neuer_Holdout_nötig",
+          "expected": true,
+          "actual": true,
+          "pass": true
+        },
+        {
+          "name": "neuer_Holdout_reserviert",
+          "expected": [
+            "HOLDOUT",
+            "UNTOUCHED"
+          ],
+          "actual": [
+            "HOLDOUT",
+            "UNTOUCHED"
+          ],
+          "pass": true
+        },
+        {
+          "name": "Register_persistiert",
+          "expected": "CONSUMED_AS_VALIDATION",
+          "actual": "CONSUMED_AS_VALIDATION",
+          "pass": true
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "other_tests": [
+    {
+      "nodeid": "tests/invariants/test_boundaries.py::test_alle_pakete_sind_erfasst",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_boundaries.py::test_importgrenzen",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_boundaries.py::test_niemand_importiert_den_pruefer",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_boundaries.py::test_nur_bekannte_module_auf_oberster_ebene",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_gueltiger_zustand_passiert",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[kein_Entry_bei_Position]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[kein_Exit_nach_Glattstellung]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[kein_Positionsverlust]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[kein_neuer_Trade_nach_erstem_Fill]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[kein_zweiter_Entry_bei_offenem_Entry]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[keine_Order_ohne_ID]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[nie_Long]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/invariants/test_monitor_erkennt_verstoesse.py::test_verstoss_wird_erkannt[nie_mehr_als_ein_Kontrakt]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_analyst_contract.py::test_analyst_sieht_nur_freigegebene_eintraege_schreibgeschuetzt",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_analyst_contract.py::test_lernprotokolle_werden_validiert",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_fastcheck.py::test_fastcheck_aequivalenz",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_journal.py::test_append_only_und_wiederanlauf",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_journal.py::test_manipulation_wird_erkannt",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_handbuchbeispiele_sind_gueltig",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[aggressor-BUYER]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[exchange_ts-2026-09-22T16:00:00.100+02:00]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[price_ticks-5000.25]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[schema_version-2.0]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[sequence--1]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[size_contracts--1]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[size_contracts-0]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_marktereignis_verstoesse[unbekanntes_feld-1]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_ordervorschlag_pflichtfelder",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_prognose_null_oder_kalibriert",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_quote_und_mbo_pflichtfelder",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_reasons_modul_entspricht_schema",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_trade_pflichtfelder[aggressor]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_trade_pflichtfelder[classification_method]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_trade_pflichtfelder[price_ticks]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_trade_pflichtfelder[size_contracts]",
+      "status": "PASS"
+    },
+    {
+      "nodeid": "tests/unit/test_schemas.py::test_unbekannte_aktion_und_grund",
+      "status": "PASS"
+    }
+  ]
+}
