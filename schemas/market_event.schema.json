@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "market_event.schema.json",
+  "title": "Kanonisches Marktereignis (Handbuch Kap. 5.1)",
+  "type": "object",
+  "required": ["schema_version", "event_id", "venue", "instrument_id", "session_id", "stream_id",
+               "sequence", "exchange_ts", "event_type", "source_hash"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "event_id": {"type": "string", "minLength": 1},
+    "venue": {"type": "string", "minLength": 1},
+    "instrument_id": {"type": "string", "minLength": 1},
+    "session_id": {"type": "string", "minLength": 1},
+    "stream_id": {"type": "string", "minLength": 1},
+    "sequence": {"type": "integer", "minimum": 0},
+    "exchange_ts": {"$ref": "#/$defs/utc_ts"},
+    "receive_ts": {"oneOf": [{"$ref": "#/$defs/utc_ts"}, {"type": "null"}]},
+    "event_type": {"enum": ["TRADE", "QUOTE", "BOOK", "TRADE_CORRECTION", "TRADE_BUST", "STATUS"]},
+    "price_ticks": {"type": "integer"},
+    "size_contracts": {"type": "integer", "minimum": 0},
+    "aggressor": {"enum": ["BUY", "SELL", "UNKNOWN"]},
+    "classification_method": {"enum": ["EXCHANGE", "QUOTE_RULE", "TICK_RULE", "NONE"]},
+    "bid_ticks": {"type": "integer"},
+    "ask_ticks": {"type": "integer"},
+    "bid_size": {"type": "integer", "minimum": 0},
+    "ask_size": {"type": "integer", "minimum": 0},
+    "book_side": {"enum": ["BID", "ASK"]},
+    "action": {"enum": ["ADD", "MODIFY", "DELETE"]},
+    "quantity": {"type": "integer", "minimum": 0},
+    "quantity_semantics": {"enum": ["NEW_TOTAL", "CHANGE"]},
+    "book_type": {"enum": ["MBO", "MBP"]},
+    "order_id": {"type": "string", "minLength": 1},
+    "corrects_event_id": {"type": "string", "minLength": 1},
+    "market_status": {"enum": ["OPEN", "HALT", "CLOSED"]},
+    "text": {"type": "string"},
+    "source_hash": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"event_type": {"const": "TRADE"}}},
+     "then": {"required": ["price_ticks", "size_contracts", "aggressor", "classification_method"],
+              "properties": {"size_contracts": {"minimum": 1}}}},
+    {"if": {"properties": {"event_type": {"const": "QUOTE"}}},
+     "then": {"required": ["bid_ticks", "ask_ticks", "bid_size", "ask_size"]}},
+    {"if": {"properties": {"event_type": {"const": "BOOK"}}},
+     "then": {"required": ["book_side", "action", "quantity", "quantity_semantics", "price_ticks", "book_type"]}},
+    {"if": {"properties": {"event_type": {"const": "BOOK"}, "book_type": {"const": "MBO"}}, "required": ["book_type"]},
+     "then": {"required": ["order_id"]}},
+    {"if": {"properties": {"event_type": {"enum": ["TRADE_CORRECTION", "TRADE_BUST"]}}},
+     "then": {"required": ["corrects_event_id"]}},
+    {"if": {"properties": {"event_type": {"const": "TRADE_CORRECTION"}}},
+     "then": {"required": ["price_ticks", "size_contracts", "aggressor", "classification_method"]}},
+    {"if": {"properties": {"event_type": {"const": "STATUS"}}},
+     "then": {"required": ["market_status"]}}
+  ],
+  "$defs": {
+    "utc_ts": {
+      "type": "string",
+      "description": "ISO-8601 in UTC mit Suffix Z (Zeitzonenprüfung, Kap. 4.2)",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?Z$"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "snapshot.schema.json",
+  "title": "Snapshot als Grenze des verfügbaren Wissens (Handbuch Kap. 5.2)",
+  "type": "object",
+  "required": ["snapshot_id", "as_of_receive_ts", "max_exchange_ts_seen", "event_count", "events_digest",
+               "instrument_id", "session_id", "quality_status", "quality_flags", "features",
+               "valid_from", "valid_until", "feature_version"],
+  "properties": {
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "as_of_receive_ts": {"$ref": "market_event.schema.json#/$defs/utc_ts"},
+    "max_exchange_ts_seen": {"oneOf": [{"$ref": "market_event.schema.json#/$defs/utc_ts"}, {"type": "null"}]},
+    "event_count": {"type": "integer", "minimum": 0},
+    "events_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$",
+                      "description": "SHA-256-Kette über die Hashes aller bis as_of_receive_ts verarbeiteten Ereignisse in Verarbeitungsreihenfolge"},
+    "instrument_id": {"type": "string", "minLength": 1},
+    "session_id": {"type": "string", "minLength": 1},
+    "quality_status": {"enum": ["OK", "DEGRADED", "INVALID"]},
+    "quality_flags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "features": {"type": "object"},
+    "feature_version": {"type": "string", "minLength": 1},
+    "valid_from": {"$ref": "market_event.schema.json#/$defs/utc_ts"},
+    "valid_until": {"$ref": "market_event.schema.json#/$defs/utc_ts"}
+  },
+  "additionalProperties": false
+}

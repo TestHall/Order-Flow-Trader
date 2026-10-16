@@ -1,0 +1,14 @@
+# Synthetischer Testkalender (T19). Keine offizielle Börsenkalenderquelle.
+calendar_id = "TEST-DST-2026-03"
+timezone = "America/New_York"
+synthetic = true
+covers_from = "2026-03-02"
+covers_to = "2026-03-13"
+
+[[closed]]
+date = "2026-03-11"
+reason = "synthetischer Feiertag für den Test"
+
+[[early_close]]
+date = "2026-03-12"
+close = "13:00"

@@ -1,0 +1,28 @@
+# Simulations- und Kostenmodell — Handbuch Kap. 8.1–8.3.
+# Kosten sind angenommene Beispielkosten, keine Brokerpreise.
+simulation_version = "SIM-1.0"
+cost_approach = "REALISTIC_FILLS"   # Kap. 8.2 Ansatz 1: Spread/Slippage stecken im Fill-Preis
+
+[account]
+currency = "USD"
+starting_capital_usd = "10000"
+
+[costs]
+roundtrip_fee_usd = "2.50"
+sizing_slippage_reserve_ticks = 2   # nur für die Positionsgröße, kein zweiter Kostenabzug (Kap. 12.3)
+extra_slippage_ticks = 0            # je aggressiver Ausführung; Stress: 1 und 2 (Kap. 8.3)
+
+[latency]
+order_latency_ms = 250              # Basistest; Stress: 500 und 1000 (Kap. 8.3)
+exit_latency_ms = 250
+
+[replay]
+# ANNAHME (Handbuch Kap. 6.1 überlässt dies dem Replay-Vertrag):
+# Ein Balken [Beginn, Ende) wird erst Ende + bar_finalization_ms (Empfangszeit) verfügbar.
+bar_finalization_ms = 100
+# ANNAHME: Fehlt receive_ts, gilt exchange_ts + assumed_receive_latency_ms (Kap. 4.2, 6.1).
+assumed_receive_latency_ms = 20
+
+[stress]
+extra_slippage_ticks = [0, 1, 2]
+order_latency_ms = [250, 500, 1000]

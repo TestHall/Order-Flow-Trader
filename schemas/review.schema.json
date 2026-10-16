@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review.schema.json",
+  "title": "Lernprotokoll (Handbuch Kap. 13.2, 13.3)",
+  "type": "object",
+  "required": ["review_id", "decision_id", "policy_version", "error_class", "evidence_refs", "finding",
+               "expected_action", "observed_action", "candidate_change", "falsification_test", "status"],
+  "properties": {
+    "review_id": {"type": "string", "minLength": 1},
+    "decision_id": {"type": "string", "minLength": 1},
+    "policy_version": {"type": "string", "minLength": 1},
+    "error_class": {"enum": ["DATA", "CALC", "POLICY", "EXECUTION", "HYPOTHESIS", "VALID_LOSS", "UNSCORABLE"]},
+    "secondary_classes": {"type": "array", "items": {"enum": ["DATA", "CALC", "POLICY", "EXECUTION", "HYPOTHESIS", "VALID_LOSS", "UNSCORABLE"]}},
+    "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "finding": {"type": "string", "minLength": 1},
+    "expected_action": {"type": "string"},
+    "observed_action": {"type": "string"},
+    "candidate_change": {"type": ["string", "null"]},
+    "falsification_test": {"type": ["string", "null"]},
+    "status": {"enum": ["PROPOSED", "REJECTED", "INCONCLUSIVE", "VALIDATED_WITH_SCOPE"]}
+  },
+  "additionalProperties": false
+}

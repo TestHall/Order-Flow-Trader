@@ -1,0 +1,70 @@
+# Referenzstrategie OF-A-1.0 — Handbuch Kap. 7.1 (Parametertabelle), 7.2–7.5.
+# Alle Werte sind experimentelle Startwerte (Kap. 1, 7.1), keine optimierten Werte.
+# Diese Datei ist eingefroren: Änderungen nur als neue Datei mit neuer policy_version.
+policy_version = "OF-A-1.0"
+status = "FROZEN"
+direction = "SHORT_ONLY"          # Kap. 5.3: Long bleibt in Version 1.0 unzulässig
+
+[bars]
+length_seconds = 60               # Geschlossene 60-Sekunden-Balken, Intervall [Beginn, Ende)
+
+[session]
+timezone = "America/New_York"
+window_start = "09:30"            # Kap. 4.1 Referenzfenster
+window_end = "16:00"
+
+[signal_time]
+start = "10:00"                   # 10:00 bis vor 15:30 New York
+end_exclusive = "15:30"
+
+[volume]
+reference_bars = 20               # Median der 20 vorherigen vollständigen Balken
+min_contracts = 100
+min_multiple_of_median = "1.5"
+
+[classification]
+min_known_fraction = "0.95"       # Klassifizierter Anteil K >= 95 %
+
+[delta]
+min_relative_delta = "0.20"       # DR >= +0,20
+
+[breakout]
+min_ticks_above_prior_high = 1    # P + 1 Tick ... P + 8 Ticks (inklusive)
+max_ticks_above_prior_high = 8
+
+[confirmation]
+bars = 3                          # die nächsten 3 vollständigen Balken
+offset_ticks = 1                  # Schluss <= min(P - 1 Tick, L - 1 Tick)
+
+[invalidation]
+ticks_above_breakout_high = 2     # Trade >= H + 2 Ticks verwirft
+
+[stop]
+ticks_above_breakout_high = 2     # Stopp fest bei H + 2 Ticks
+
+[risk]
+min_distance_ticks = 4            # zulässiges Risiko aus Preisabstand beim geplanten Fill
+max_distance_ticks = 24
+budget_per_idea_usd = "50"        # Kap. 8.1
+max_contracts = 1                 # Simulierte Größe maximal 1 MES
+
+[entry]
+max_spread_ticks = 2
+max_quote_age_ms = 250
+signal_validity_ms = 2000         # Signal gültig nach Bestätigung
+
+[exit]
+target_multiple = "2"             # Ziel = F - 2 x (Stopp - F)
+time_exit_minutes = 10            # nach erstem Entry-Fill
+latest_exit_local = "15:55"       # spätestens 15:55 New York
+
+[limits]
+max_candidates_per_session = 3
+max_filled_entries_per_session = 1
+
+[cooldown]
+bars_after_rejection = 5          # Wartezeit nach Verwerfung
+
+[news]
+blackout_before_minutes = 5
+blackout_after_minutes = 5

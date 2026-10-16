@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orderflow-agent"
+version = "0.1.0"
+description = "Order-Flow-Agent nach dem Ausbildungs- und Prüfhandbuch (OF-A-1.0), Replay/Shadow ohne echte Orders"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.18"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+orderflow = "orderflow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

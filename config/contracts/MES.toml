@@ -1,0 +1,5 @@
+# CME Micro E-mini S&P 500 — Handbuch Kap. 4 [S5]
+symbol = "MES"
+venue = "CME"
+tick_size = "0.25"      # Indexpunkte
+point_value_usd = "5"   # USD je Indexpunkt -> 1,25 USD je Tick

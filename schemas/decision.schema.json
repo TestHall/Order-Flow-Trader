@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "decision.schema.json",
+  "title": "Entscheidung vor Kenntnis des Ergebnisses (Handbuch Kap. 5.3)",
+  "type": "object",
+  "required": ["decision_id", "snapshot_id", "policy_version", "mode", "action", "reason_codes", "facts",
+               "evidence_refs", "hypothesis", "counterevidence", "would_invalidate", "proposed_order", "forecast"],
+  "properties": {
+    "decision_id": {"type": "string", "minLength": 1},
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "policy_version": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["REPLAY", "SHADOW"]},
+    "decided_at": {"$ref": "market_event.schema.json#/$defs/utc_ts"},
+    "state": {"enum": ["IDLE", "ARMED", "ENTRY_PENDING", "OPEN", "EXIT_PENDING", "COOLDOWN", "DONE_FOR_SESSION"]},
+    "halt_new_entries": {"type": "boolean"},
+    "action": {"enum": ["NO_TRADE", "PROPOSE_SHORT", "PROPOSE_LONG", "CANCEL_PENDING", "HALT_NEW_ENTRIES"]},
+    "reason_codes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/reason_code"}},
+    "facts": {
+      "type": "object",
+      "properties": {
+        "buy_volume": {"type": "integer", "minimum": 0},
+        "sell_volume": {"type": "integer", "minimum": 0},
+        "unknown_volume": {"type": "integer", "minimum": 0},
+        "delta": {"type": "integer"},
+        "known_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      }
+    },
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "hypothesis": {"type": ["string", "null"]},
+    "counterevidence": {"type": ["string", "null"]},
+    "would_invalidate": {"type": ["string", "null"]},
+    "proposed_order": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/order_proposal"}]},
+    "forecast": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/forecast"}]}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"action": {"enum": ["PROPOSE_SHORT", "PROPOSE_LONG"]}}},
+     "then": {"properties": {"proposed_order": {"$ref": "#/$defs/order_proposal"}}}},
+    {"if": {"properties": {"action": {"const": "PROPOSE_SHORT"}}},
+     "then": {"properties": {"proposed_order": {"properties": {"side": {"const": "SELL"}}}}}},
+    {"if": {"properties": {"action": {"enum": ["NO_TRADE", "CANCEL_PENDING", "HALT_NEW_ENTRIES"]}}},
+     "then": {"properties": {"proposed_order": {"type": "null"}}}}
+  ],
+  "$defs": {
+    "reason_code": {"enum": [
+      "WAIT_CONFIRMATION", "NO_SIGNAL", "OUTSIDE_SIGNAL_TIME", "WARMUP", "MISSING_HISTORY",
+      "NO_TRADE_DATA_QUALITY", "NEWS_BLACKOUT", "TRADING_HALT", "DATA_GAP", "SESSION_NOT_EVALUABLE",
+      "CONFIRMED", "CANDIDATE_REJECTED_BARRIER", "CANDIDATE_REJECTED_EXPIRY", "CANDIDATE_REJECTED_DATA",
+      "COOLDOWN", "NO_TRADE_RISK", "RISK_DISTANCE_OUT_OF_RANGE", "NO_TRADE_EXPIRED", "WAIT_FILTER",
+      "FILTER_REJECTED", "MAX_CANDIDATES", "DONE_FOR_SESSION", "ENTRY_PENDING", "POSITION_MANAGED",
+      "AFTER_ENTRY_CUTOFF", "RESTART_RECOVERY", "LONG_NOT_ALLOWED"
+    ]},
+    "order_proposal": {
+      "type": "object",
+      "description": "Pflichtfelder lt. Kap. 5.3: Seite, Menge, Entry-Regel, Stopp, Ziel, Gültigkeitsdauer, geplantes Geldrisiko",
+      "required": ["client_order_id", "side", "quantity", "entry_rule", "stop_ticks", "target_ticks",
+                   "valid_for_ms", "planned_risk_usd"],
+      "properties": {
+        "client_order_id": {"type": "string", "minLength": 1},
+        "side": {"enum": ["SELL", "BUY"]},
+        "quantity": {"type": "integer", "minimum": 1},
+        "entry_rule": {"type": "string", "minLength": 1},
+        "planned_fill_ticks": {"type": "integer"},
+        "stop_ticks": {"type": "integer"},
+        "target_ticks": {"type": "integer"},
+        "distance_ticks": {"type": "integer", "minimum": 1},
+        "valid_for_ms": {"type": "integer", "minimum": 1},
+        "valid_until": {"$ref": "market_event.schema.json#/$defs/utc_ts"},
+        "planned_risk_usd": {"type": "string", "pattern": "^-?\\d+(\\.\\d+)?$"}
+      },
+      "additionalProperties": false
+    },
+    "forecast": {
+      "type": "object",
+      "description": "null bedeutet: keine kalibrierte Wahrscheinlichkeit verfügbar. Ohne Kalibrierungsnachweis unzulässig.",
+      "required": ["target_definition", "probability", "calibration_ref"],
+      "properties": {
+        "target_definition": {"type": "string", "minLength": 1},
+        "probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "calibration_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}
